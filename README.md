@@ -1,5 +1,6 @@
 clone 分支：
 git clone git@github.com:tom-li-520/tom-li-520.github.io.git
+cd tom-li-520.github.io.git
 
 修改：
 git add .
