@@ -8,5 +8,6 @@ git commit –m "add branch"
 git push 
 
 生产&部署
-hexo g
-hexo d
+hexo clean && hexo g && hexo d
+
+
