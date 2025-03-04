@@ -31,3 +31,28 @@ npm install
 └── themes
 ```
 
+其中：
+
+1. _config.yml 是配置文件，大部分配置都在此可以配置；
+
+2. scaffolds 里面存放了模板文件，当使用 `hexo new filename`时，会根据此处的模板建立文档
+
+3. themes 里面存放了模板信息，当在 [hexo主题](https://hexo.io/themes/)  找到合适主题之后，可以使用以下cmd 拉取：
+
+```
+# 进入Hexo项目的themes目录
+cd your-hexo-site/themes
+# 克隆主题仓库
+git clone https://github.com/theme-next/hexo-theme-next.git 主题名
+```
+
+4. source 的_posts里面存放的就是博客内容了，写的博客都可以放在这个里面
+
+
+
+## _config.yml相关
+
+大部分内容在如下link ： [_config.yml 介绍](https://hexo.io/zh-cn/docs/configuration)  
+
+常用部分如下：
+
