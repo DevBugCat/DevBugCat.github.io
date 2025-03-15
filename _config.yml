@@ -5,11 +5,11 @@
 # Site
 title: Tom's blog
 subtitle: 'some things are interesting'
-description: ''
+description: 'some things are interesting'
 keywords:
-author: tom-li-520
-language: en
-timezone: ''
+author: tom.li
+language: zh-CN
+timezone: Asia/Shanghai
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
@@ -93,26 +93,13 @@ include:
 exclude:
 ignore:
 
-# 确保关闭自动转换下划线（防止破坏URL）
-marked:
-  prependRoot: true
-  breaks: true
-  smartypants: false
-  mangle: false  # 关键！关闭自动转义下划线
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: volantis
 
-menu:
-  首页: /
-  语言: /categories/语言/
-  算法: /categories/算法/
-  Hexo: /categories/Hexo/
- 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: git
-  repo: git@github.com:tom-li-520/tom-li-520.github.io.git
-  branch: main
+  type: ''
+

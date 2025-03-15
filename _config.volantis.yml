@@ -1,0 +1,270 @@
+############################### Navigation Bar ############################### > start
+# 注意事项：建议规范全站路径 URL 最后带一个 "/" 例如 "about/"
+navbar:
+  visiable: auto # always, auto
+  logo: # choose [img] or [icon + title]
+    img: volantis-static/media/org.volantis/blog/Logo-NavBar@3x.png # https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
+    icon:
+    title:
+  menu:
+    - name: 博客
+      icon: fa-solid fa-rss
+      url: /
+    - name: 分类
+      icon: fa-solid fa-folder-open
+      url: categories/
+    - name: 标签
+      icon: fa-solid fa-tags
+      url: tags/
+    - name: 归档
+      icon: fa-solid fa-archive
+      url: archives/
+    - name: 友链
+      icon: fa-solid fa-link
+      url: friends/
+    - name: 关于
+      icon: fa-solid fa-info-circle
+      url: about/
+    - name: 更多
+      icon: fa-solid fa-ellipsis-v
+      rows:
+        - name: 主题源码
+          url: https://github.com/volantis-x/hexo-theme-volantis/
+        - name: 更新日志
+          url: https://github.com/volantis-x/hexo-theme-volantis/releases/
+        - name: hr
+        - name: 有疑问？
+          rows:
+            - name: 看 FAQ
+              url: faqs/
+            - name: 看 本站源码
+              url: https://github.com/volantis-x/volantis-docs/
+            - name: 提 Issue
+              url: https://github.com/volantis-x/hexo-theme-volantis/issues/
+        - name: hr
+        - name: 公告和测试博文
+          url: archives/
+        - name: 示例博客
+          url: examples/
+        - name: 特别感谢
+          url: contributors/
+    - name: 近期
+      icon: fa-solid fa-clock
+      url: /
+      rows:
+        - name: 热门文章
+          icon: fa-solid fa-fire
+        - name: ProHUD 开源库的设计思路
+          url: blog/2019-08-27-prohud/
+        - name: ValueX：实用的安全对象类型转换库
+          url: blog/2019-08-29-valuex/
+        - name: 心率管家 App 的设计与开发
+          url: blog/2019-07-23-heartmate/
+    - name: 背景音乐
+      icon: fa-solid fa-compact-disc
+  search: Search...   # Search bar placeholder
+############################### Navigation Bar ############################### > end
+default_author: tom.li
+
+pages:
+  # 友链页面配置
+  friends:
+    layout_scheme: traditional # simple: 简单布局, traditional: 传统布局
+
+post_meta:
+  author: true  # 必须为 true 才能显示作者
+  author_icon: fas fa-user  # 确保图标存在
+
+# 页脚配置
+site_footer:
+  # layout of footer: [aplayer, social, license, info, copyright]
+  layout: [aplayer, social, license, info, copyright]
+  social:
+    - icon: fas fa-rss
+      url: atom.xml
+    - icon: fas fa-envelope
+      url: mailto:1757578037@qq.com
+    - icon: fab fa-github
+      url: https://github.com/tom-li-520
+  copyright: '[Copyright © 2025-2031](/)'
+  # You can add your own property here. (Support markdown, for example: br: '<br>')
+
+#网站布局
+############################### Cover ############################### > start
+cover:
+  height_scheme: full # full, half
+  layout_scheme: search # blank (留白), search (搜索), dock (坞), featured (精选), focus (焦点)
+  display:
+    home: true
+    archive: true
+    others: false # can be written in front-matter 'cover: true'
+  background: https://gcore.jsdelivr.net/gh/tom-li-520/blogImage@main/Image/vvvv.jpg
+  # background: https://bing.ioliu.cn/v1/rand?w=1920&h=1200
+  logo: # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-Cover@3x.png
+  title: Tom's blog
+  subtitle: '有趣的生活，有趣的技术'
+  search: something interesting # search bar placeholder
+  features:
+    - name: 主页
+      icon: #
+      url: /v4/getting-started/
+    - name: 分类
+      icon: #
+      url: categories/
+    - name: 标签
+      icon: #
+      url: tags/
+    - name: 源码
+      icon: #
+      url: https://github.com/tom-li-520
+############################### Cover ############################### > end
+
+
+#侧边栏配置
+############################### Sidebar ############################### > start
+sidebar:
+  position: right # left right
+  # 主页、分类、归档等独立页面
+  for_page: [blogger, category, tagcloud, donate,qrcode,webinfo]
+  # layout: docs/post 这类文章页面
+  for_post: [toc]
+  # 侧边栏组件库
+  widget_library:
+    # ---------------------------------------
+    # blogger info widget
+    blogger:
+      class: blogger
+      display: [desktop, mobile] # [desktop, mobile]
+      avatar: https://gcore.jsdelivr.net/gh/tom-li-520/blogImage@main/Image/panzi.png # https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
+      shape: rectangle # circle, rectangle
+      url: /about/
+      title: tom.li
+      subtitle: 通过以下方式联系我
+      description: 有趣的生活，有趣的技术
+      jinrishici: false # Poetry Today. You can set a string, and it will be displayed when loading fails.
+      social:
+        - icon: fa-solid fa-envelope
+          url: mailto:1757578037@qq.com
+        - icon: fab fa-github
+          url: https://github.com/tom-li-520
+    # ---------------------------------------
+    # toc widget (valid only in articles)
+    toc:
+      class: toc
+      display: [desktop, mobile] # [desktop, mobile]
+      sticky: true
+      header:
+        icon: fa-solid fa-list
+        title: 本文目录
+      list_number: false
+      min_depth: 2
+      max_depth: 5
+    # ---------------------------------------
+    # music
+    music:
+      class: music
+      display: [desktop, mobile] # [desktop, mobile]
+      pjaxReload: false
+    # ---------------------------------------
+    # category widget
+    category:
+      class: category
+      display: [desktop] # [desktop, mobile]
+      header:
+        icon: fa-solid fa-folder-open
+        title: 文章分类
+        url: /blog/categories/
+    # ---------------------------------------
+    # tagcloud widget
+    tagcloud:
+      class: tagcloud
+      display: [desktop, mobile] # [desktop, mobile]
+      header:
+        icon: fa-solid fa-tags
+        title: 热门标签
+        url: /blog/tags/
+      min_font: 14
+      max_font: 24
+      color: true
+      start_color: '#999'
+      end_color: '#555'
+    # ---------------------------------------
+    # qrcode widget
+    qrcode:
+      class: qrcode
+      position: right  # 侧边栏位置
+      display: [desktop, mobile] # [desktop, mobile]
+      height: 150px  # Automatic height if not set
+      images:
+        - https://cdn.jsdelivr.net/gh/tom-li-520/blogImage@main/gratuity/weix.png  
+        - https://cdn.jsdelivr.net/gh/tom-li-520/blogImage@main/gratuity/zhifubao.png
+    # ---------------------------------------
+    # webinfo widget
+    webinfo:
+      class: webinfo
+      display: [desktop]
+      header:
+        icon: fa-solid fa-award
+        title: 站点信息
+      type:
+        article:
+          enable: true
+          text: '文章数目：'
+          unit: '篇'
+        runtime:
+          enable: false
+          data: '2020/01/01'    # 填写建站日期
+          text: '已运行时间：'
+          unit: '天'
+        wordcount:
+          enable: false
+          text: '本站总字数：'   # 需要启用 wordcount
+          unit: '字'
+        visitcounter:
+          enable: true
+          siteuv:
+            text: '本站访客数：'
+            unit: '人'
+          sitepv:
+            text: '本站总访问量：'
+            unit: '次'
+        lastupd:
+          enable: true
+          friendlyShow: true    # 更友好的时间显示
+          text: '最后活动时间：'
+          unit: '日'
+    # ---------------------------------------
+    # lastupdate widget
+    lastupdate:
+      class: lastupdate
+      display: [desktop, mobile]
+      header:
+        icon: fa-solid fa-clock WISTERIA
+        title: 最近更新
+############################### Sidebar ############################### > end
+
+comments:
+  service: giscus
+  # giscus
+  # https://giscus.app
+  # https://github.com/laymonage/giscus
+  giscus:
+    # 以下配置按照 yml 格式增删填写即可
+    repo: tom-li-520/blogComments
+    repo-id: R_kgDOOI2KXg
+    category: General
+    category-id: DIC_kwDOOI2KXs4CoC
+    mapping: "pathname"
+    reactions-enabled: "1"
+    emit-metadata: "0"
+    lang: "zh-CN"
+    # 以上配置按照 yml 格式增删填写即可
+    theme:
+      light: "light" # https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@master/css/giscus/light.css
+      dark: "dark" # https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@master/css/giscus/dark.css
+
+
+#搜索功能：
+search:
+  enable: true
+  service: hexo
