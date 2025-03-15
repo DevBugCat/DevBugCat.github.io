@@ -14,6 +14,7 @@ hexo clean && hexo g && hexo d
 
 ## 新环境需要
  npm install hexo-deployer-git --save
+ rm -rf node_modules && npm install --force
  
  # 禁用自动换行符转换（所有仓库生效） 解决本地部署和github上显示不一致问题
 git config --global core.autocrlf false 
