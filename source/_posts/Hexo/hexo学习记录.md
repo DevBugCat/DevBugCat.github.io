@@ -59,4 +59,9 @@ git clone https://github.com/theme-next/hexo-theme-next.git 主题名
 大部分内容在如下link ： [_config.yml 介绍](https://hexo.io/zh-cn/docs/configuration)  
 
 常用部分如下：
+![配置](https://cdn.jsdelivr.net/gh/tom-li-520/blogImage@main/Image/image-20250315135959099.png)
+
+
+
+
 
