@@ -101,5 +101,6 @@ theme: volantis
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repo: git@github.com:tom-li-520/tom-li-520.github.io.git
 
