@@ -118,6 +118,10 @@
       <!-- 打赏组件 -->
       <% if (['post'].includes(page.layout) && footer_widget.donate && footer_widget.donate.enable == true) { %>
         <div class='donate'>
+          <hr class="donate-divider">
+          <div class='donate-text'>
+            觉得不错，就打赏一杯咖啡☕️吧~
+          </div>
           <div class='imgs'>
             <% getList(footer_widget.donate.images).forEach(function(url){ %>
               <img src='<%- url_for(url) %>'>

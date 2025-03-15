@@ -307,16 +307,40 @@
     margin: .25em 0
     a
       font-weight: 500
-  .donate
+.donate
     display: flex
-    margin: 0 auto
+    flex-direction: column  // 改为垂直排列
+    align-items: center     // 内容居中
+    margin: 1rem auto       // 增加上下边距
+    position: relative      // 为横线定位准备
+    
+    // 添加文字上方的横线
+    &::before
+        content: ""
+        display: block
+        width: 60px         // 横线长度
+        height: 1px         // 横线粗细
+        background: #ddd    // 颜色
+        margin: 1rem 0      // 调整横线上下间距
+    
+    // 新增文字样式（需要在模板中添加对应HTML）
+    .donate-text
+        font-size: 14px
+        color: #666
+        margin-bottom: 1rem // 文字与二维码间距
+    
     .imgs
-      display: inline-flex
-      margin: 0 auto
-      .fancybox
-        margin: $gap * 0.5
-      img
-        width: 80px
+        display: flex       // 保持flex布局
+        flex-direction: row // 二维码水平排列
+        justify-content: center
+        gap: 1rem           // 图片间距
+        
+        .fancybox
+            margin: $gap * 0.5
+            
+        img
+            width: 150px    // 增大二维码尺寸
+            height: auto   // 保持比例
 
 
 article .readmore
