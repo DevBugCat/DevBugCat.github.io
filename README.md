@@ -12,7 +12,9 @@ hexo clean && hexo g && hexo d
 3. 提交更改：git commit -m "message"
 4. 推送到远程的hexo分支：git push origin hexo
 
-## 可能有用
+## 新环境需要
  npm install hexo-deployer-git --save
-
+ 
+ # 禁用自动换行符转换（所有仓库生效） 解决本地部署和github上显示不一致问题
+git config --global core.autocrlf false 
 

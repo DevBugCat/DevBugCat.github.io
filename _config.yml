@@ -103,5 +103,4 @@ theme: volantis
 deploy:
   type: git
   repo: git@github.com:tom-li-520/tom-li-520.github.io.git
-  branch: main
-
+  branch: master  # 关键！必须与远程分支一致
