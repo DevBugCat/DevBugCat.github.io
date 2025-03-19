@@ -102,5 +102,5 @@ theme: volantis
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: git@github.com:tom-li-520/tom-li-520.github.io.git
+  repo: git@github.com:DevBugCat/DevBugCat.github.io.git
   branch: master  # 关键！必须与远程分支一致

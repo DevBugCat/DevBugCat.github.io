@@ -103,11 +103,72 @@ copy hexo-theme-volantis整个文件放在 `\themes` 下重命名为 `volantis` 
 
 当你白嫖了一个主题之后，可能会有点难受，因为直接用别人的感觉不太顺手，有些功能不想要，有些功能想有他没有，怎么办？哎~ 没关系，开发主题的大佬们已经想到了，留了很多接口供你调教，接下来我会捡一些重要的部分share出来，后续更多的细节就靠自己挖取了；
 
-在将详细调教之前，先透露一个小妙招，刚刚copy的主题文件中，有一个_config.yml 
+在将详细调教之前，先透露一个小妙招，刚刚copy的主题文件中，有一个_config.yml ，加下来的主题调教和其分不开，我们可以copy出来此主题配置文件，后续在上面做修改即可。
 
-## volantis主题调教1--菜单栏调教
+在主题修改之前，先在blog根目录下建立一个_config_volantis.yml，它的优先级会高于 _config.yml，后续主题修改可以在 _config_volantis.yml 上进行，这样不会改坏原本的配置，示例如下：
+![](https://gcore.jsdelivr.net/gh/tom-li-520/blogImage@main/Image/image-20250318085053191.png)
+
+## volantis主题调教1--网站主页修改
+
+首先安装完volantis之后，进入配置好的网页就是主页，主页主要有如下部分组成：
+![image-20250318090050687](https://gcore.jsdelivr.net/gh/tom-li-520/blogImage@main/Image/image-20250318090050687.png)
 
 
+
+接下来就来修改一些配件内容，做一个示范介绍，用到的样例参考上面介绍的volantis主题下的_config.yml以及官方学习文档之[网站与文章封面](https://volantis.js.org/v6/theme-settings/#网站与文章封面) 、[侧边栏配置 ](https://volantis.js.org/v6/theme-settings/#侧边栏配置) 、 [设置网站页脚](https://volantis.js.org/v6/theme-settings/#设置网站页脚)
+
+### 网站主页修改之一：title、subtitle、feature、background 修改
+
+主题的title 、 描述 以及feature都是放在cover下的，我们首先从volantis主题下的_config.yml copy处 `cover` 整个字段到新建的 _config.volantis.yml文件里面，如下分别是各个部分的内容：
+![image-20250319084456381](https://gcore.jsdelivr.net/gh/tom-li-520/blogImage@main/Image/image-20250319084456381.png)
+
+1. 文件配置从上到下进行说明，首先是`backgroand` ，这个后面就是跟的一个网络图片，你可以自己找到一个图片进行url替换，即可完成背景图片替换，如果想用自己上传的图片，可以配置图床，然后上传上去，获取url即可做到，详情可以参考以下连接：
+
+2. `title` 字段后面就是主题title了，默认是volantis，也就是上面网页显示的volantis，我们在这里修改成 `Tom's blog` ，后续看成果图；
+
+3. `subtitle` 就是描述了，可以对写一段自己想说的话；
+
+4. 接下来就是feature了，这里默认已经有了多个，可以根据个人情况进行增加或删除，接下来我会举例说明如何修改：
+  #### feature修改介绍
+
+feature每个块有四个部分组成，分别是：
+
+```
+name / icon / img / url
+```
+
+ `name`就是你需要显示feature的名字，`icon`就是图标，`image`就是上面的图片，`url` 就是对应要跳转的地方；
+
+接下来来做一些增删改查的实例：
+
+#### feature修改之：增
+
+   我们新增一个test到主页上的feature里面，当点击test的时候，显示这里什么都没有，应该如何做？
+
+1. 首先自然是显示出来这个feature，按照上面所说的，我们新增如下部分代码：
+
+   ```
+   - name: test
+     icon: #
+     img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f9ec.svg
+     url: /test/
+   ```
+
+   新增完毕后整体feature情况如下：
+   ![image-20250319083440147](https://gcore.jsdelivr.net/gh/tom-li-520/blogImage@main/Image/image-20250319083440147.png)
+2. 修改完成后使用 `hexo s` 就可以重新部署，然后访问 `http://localhost:4000/` 即可看到修改后的效果：
+   ![image-20250319084802046](https://gcore.jsdelivr.net/gh/tom-li-520/blogImage@main/Image/image-20250319084802046.png)
+3. 这个时候聪明的你会发现，点击测试没有任何反应，那是因为没有将其修改响应创建出来，因为我们填写的是`/test/` ，这代表他会去 `\source\test`下面去找结果，这个时候我们需要生成对应的文件目录和`index.md`给它，使用如下命令可以生成：
+
+   ```
+   hexo new page "test" #test 可以替换
+   ```
+
+   命令运行完成后，你可以在 `source` 目录下面发现如下结果：
+   ![image-20250319085330969](https://gcore.jsdelivr.net/gh/tom-li-520/blogImage@main/Image/image-20250319085330969.png)
+4. 这个时候，在重新 `hexo s` + 浏览器访问 `http://localhost:4000/ ` ，再去点击测试就会有响应，进入到生产的`index.md`界面里面，在这个里面可以显示一些其他想显示的东西，后续的就看如何发挥了
+   ![image-20250319085523490](https://gcore.jsdelivr.net/gh/tom-li-520/blogImage@main/Image/image-20250319085523490.png)
+#### feature修改之：删
 
 
 
