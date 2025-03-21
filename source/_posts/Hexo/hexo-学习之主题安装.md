@@ -311,7 +311,7 @@ blogger:
 
 
 
-## volantis 主题调教4 -- 页脚调整
+## volantis主题调教4 -- 页脚调整
 
 依旧是老套路了，乱拳打死老师傅，还是从主题下的`_config.yml`搜索 `site_footer` 部分，全部拷贝到 `_config.volantis.yml` 里面
 
