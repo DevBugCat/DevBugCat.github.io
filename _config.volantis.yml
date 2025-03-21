@@ -85,7 +85,7 @@ site_footer:
     - icon: fas fa-envelope
       url: mailto:1757578037@qq.com
     - icon: fab fa-github
-      url: https://github.com/tom-li-520
+      url: https://github.com/DevBugCat
   copyright: '[Copyright © 2025-2031](/)'
   # You can add your own property here. (Support markdown, for example: br: '<br>')
 
@@ -116,7 +116,7 @@ cover:
       url: tags/
     - name: 源码
       icon: #
-      url: https://github.com/tom-li-520
+      url: https://github.com/DevBugCat
 ############################### Cover ############################### > end
 
 
@@ -379,7 +379,7 @@ article:
       # https://volantis.js.org/advanced-settings/#多人协同
       author:
         avatar: volantis-static/media/org.volantis/blog/favicon/apple-touch-icon.png # https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/apple-touch-icon.png
-        name: tom-li-520
+        name: tom.li
         url: /
       # 文章创建日期
       date:

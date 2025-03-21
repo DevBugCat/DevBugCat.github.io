@@ -170,5 +170,189 @@ name / icon / img / url
    ![image-20250319085523490](https://gcore.jsdelivr.net/gh/tom-li-520/blogImage@main/Image/image-20250319085523490.png)
 #### feature修改之：删
 
+删除部分比较容易，直接把对应部分的直接拿掉即可，比如我们删除掉示例部分，需要拿掉的部分如下：
+
+```
+    - name: 示例
+      icon: #
+      img: volantis-static/media/twemoji/assets/svg/1f396.svg #  https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f396.svg
+      url: /examples/
+```
+
+删除之后，保存即可，然后运行 `hexo s` 可以再看看结果：
+可以看见如下部分就不再拥有示例部分了：
+![image-20250322060326717](https://gcore.jsdelivr.net/gh/tom-li-520/blogImage@main/Image/image-20250322060326717.png)
+
+#### feature修改之：改
+
+feature中有些功能初始化之后是点击时没有反应的，我个人玩法比较简单，不需要这么多功能，因此之做了分类和标签以及源码的功能，参考设定如下：
+
+```
+	- name: 主页
+      icon: #
+      url: /v4/getting-started/
+    - name: 分类
+      icon: #
+      url: categories/
+    - name: 标签
+      icon: #
+      url: tags/
+    - name: 源码
+      icon: #
+      url: https://github.com/DevBugCat
+```
+
+修改完 `_config.volantis.yml` 文件后，还需要创建对应文件，比如分类和标签需要创建对应文件，而源码需要你给出对应的仓库连接：
+创建文件命令如下：
+
+```
+hexo new page "categories"
+hexo new page "tags"
+```
+
+运行完之后可以看到在source文件夹下多了几个文件夹：
+![image-20250322061858647](https://gcore.jsdelivr.net/gh/tom-li-520/blogImage@main/Image/image-20250322061858647.png)
+这个时候再运行查看点击即可访问：
+比如我点击分类就可以看到界面：
+![image-20250322062024396](https://gcore.jsdelivr.net/gh/tom-li-520/blogImage@main/Image/image-20250322062024396.png)
+
+后续上传文件的时候对文章进行分类和标签标注即可，如何标注可以参考如下图片：
+![image-20250322062234257](https://gcore.jsdelivr.net/gh/tom-li-520/blogImage@main/Image/image-20250322062234257.png)
+
+我个人比较懒，前一篇有写说hexo有样例模板，即在 `scaffolds\post.md` 文件夹下，修改成如下内容：
+
+```
+---
+title: {{ title }}
+date: {{ date }}
+tags:
+- 
+categories:
+-
+---
+
+```
+
+这样使用 `hexo new “文章名字”` 时就可以直接得到 `tags` 和 `cattegories` 内容，然后每篇文章填写一下即可。
+
+## volantis主题调教2 -- 网站layout功能调教
+
+layout功能即如下位置：
+
+```
+  layout_scheme: dock # blank (留白), search (搜索), dock (坞), featured (精选), focus (焦点)
+```
+
+我个人选择的时search，方便后续想搜索文章的时候可以搜索到，因此修改为了如下内容：
+
+```
+ layout_scheme: search # blank (留白), search (搜索), dock (坞), featured (精选), focus (焦点)
+```
+
+改为search的layout之后，在search 栏上会default出现提示词，在如下位置：
+![image-20250322063105920](https://gcore.jsdelivr.net/gh/tom-li-520/blogImage@main/Image/image-20250322063105920.png)
+可以修改为需要的内容，比如测试时改为 `测试一下`
+
+```
+  search: 测试一下 # search bar placeholder
+```
+
+修改完成后就再 `hexo s `去本地浏览器查看结果：
+![image-20250322063300852](https://gcore.jsdelivr.net/gh/tom-li-520/blogImage@main/Image/image-20250322063300852.png)
+
+那这个时候修改完了吗？no no no~ ，细心的你会输入一些内容试试看，结果发现，输入之后点击搜索没有用呀，啥都没有，怎么办？
+官网已经给了解决办法了，不要慌，看看这里：[站内搜索](https://volantis.js.org/v6/theme-settings/#站内搜索) ，你只需要新增如下修改即可完成：
+
+```
+#搜索功能：
+search:
+  enable: true
+  service: hexo
+```
+
+再去测试一下就会发现ok啦~
+![image-20250322063857411](https://gcore.jsdelivr.net/gh/tom-li-520/blogImage@main/Image/image-20250322063857411.png)
+看到这个界面就已经部署好了，至于为什么是空，那肯定是因为你还一篇博客都没写呀。
+
+## volantis主题调教3 -- 侧边栏功能
+
+侧边栏功能可以在`volantis`主题下的`_config.yml`搜索 `Sidebar` 部分，全部拷贝到 `_config.volantis.yml` 里面，然后在做修改：
+其实主题创建的人已经提供了很多功能了，参考这些内容进行一些修改：
+![image-20250322064801160](https://gcore.jsdelivr.net/gh/tom-li-520/blogImage@main/Image/image-20250322064801160.png)
+
+这里已经提供了多个侧边栏结果了，我们可以选择一些展示，即修改 `for_page` 里面的内容进行增减，比如现在有 `blogger, category, tagcloud, donate` 等内容，比如可以新增一个 `webinfo` 来做一些站点信息统计：
+
+```
+  for_page: [blogger, category, tagcloud, donate,webinfo]
+```
+
+当然，你可以修改这个里面的内容，比如 `blooger` 里面修改个人信息，我这里举个个人例子在上面，可以参考对应修改：
+
+```
+blogger:
+      class: blogger
+      display: [desktop, mobile] # [desktop, mobile]
+      avatar: https://gcore.jsdelivr.net/gh/tom-li-520/blogImage@main/Image/panzi.png # https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
+      shape: rectangle # circle, rectangle
+      url: /about/
+      title: tom.li
+      subtitle: 通过以下方式联系我
+      description: 有趣的生活，有趣的技术
+      jinrishici: false # Poetry Today. You can set a string, and it will be displayed when loading fails.
+      social:
+        - icon: fa-solid fa-envelope
+          url: mailto:1757578037@qq.com
+        - icon: fab fa-github
+          url: https://github.com/tom-li-520
+```
+
+最后展示一下修改后的结果（PS：可能你现在还没有开始写blog，所以这些统计结果都不在，不要担心，你开始写之后就会出现的）
+![image-20250322065915527](https://gcore.jsdelivr.net/gh/tom-li-520/blogImage@main/Image/image-20250322065915527.png)
 
 
+
+## volantis 主题调教4 -- 页脚调整
+
+依旧是老套路了，乱拳打死老师傅，还是从主题下的`_config.yml`搜索 `site_footer` 部分，全部拷贝到 `_config.volantis.yml` 里面
+
+如下：
+
+```
+site_footer:
+  # layout of footer: [aplayer, social, license, info, copyright]
+  layout: [aplayer, social, license, analytics, info, copyright]
+  social:
+    - icon: #fa-solid fa-rss
+      url:
+    # or
+    - img:
+      url:
+    # or
+    - avatar:
+      url:
+  # site source
+  source: https://github.com/volantis-x/volantis-docs/
+  # analytics using leancloud
+  analytics: >
+    <span id="lc-sv">本站总访问量为 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 次</span>
+    <span id="lc-uv">访客数为 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 人</span>
+  # site copyright
+  copyright: '[Copyright © since 2017 XXX](/)'
+  # You can add your own property here. (Support markdown, for example: br: '<br>')
+  br: '<br>'
+```
+
+需要你自己添加一些信息，比如 `social` 里面的信息：
+`icon` 是小图标，可以去 [FontAwesome 字体图标中文Icon](https://fontawesome.com.cn/) 里面去找，找到之后复制中间文字即可使用：
+![image-20250322073623220](https://gcore.jsdelivr.net/gh/tom-li-520/blogImage@main/Image/image-20250322073623220.png)
+
+url就是你需要贴的网址之类的了。
+
+后续还需要改的是 `copyright` 可以修改到你想要开放的年限，比如 2025-2026
+修改完成后如下：
+![image-20250322073952983](https://gcore.jsdelivr.net/gh/tom-li-520/blogImage@main/Image/image-20250322073952983.png)
+
+
+# 结语
+
+主页修改就到这里了，后续会对文章界面的修改再出一篇做详细介绍，主要内容包含菜单栏修改，评论去修改，文章默认的一些设定之类的内容，详情见如下link了：
