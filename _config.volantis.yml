@@ -273,6 +273,10 @@ search:
   enable: true
   service: hexo
 
+plugins:
+  # 文章字数统计、阅读时长，开启需要安装插件: npm i --save hexo-wordcount
+  wordcount:
+    enable: true
   ############################### Article Layout ############################### > start
 # 文章布局
 article:
@@ -297,10 +301,10 @@ article:
   body:
     # 文章顶部信息
     # 从 meta_library 中取
-    top_meta: [author, category, date, counter] #启用评论数量需在此添加
+    top_meta: [author, category, date, counter,wordcount] #启用评论数量需在此添加
     # 文章底部信息
     # 从 meta_library 中取
-    bottom_meta: [updated, tags, share]
+    bottom_meta: [updated, tags, share, wordcount]
     # ----------------
     # 文章页脚组件
     footer_widget:
