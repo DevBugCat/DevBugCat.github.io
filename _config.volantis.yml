@@ -25,41 +25,6 @@ navbar:
     - name: 关于
       icon: fa-solid fa-info-circle
       url: about/
-    - name: 更多
-      icon: fa-solid fa-ellipsis-v
-      rows:
-        - name: 主题源码
-          url: https://github.com/volantis-x/hexo-theme-volantis/
-        - name: 更新日志
-          url: https://github.com/volantis-x/hexo-theme-volantis/releases/
-        - name: hr
-        - name: 有疑问？
-          rows:
-            - name: 看 FAQ
-              url: faqs/
-            - name: 看 本站源码
-              url: https://github.com/volantis-x/volantis-docs/
-            - name: 提 Issue
-              url: https://github.com/volantis-x/hexo-theme-volantis/issues/
-        - name: hr
-        - name: 公告和测试博文
-          url: archives/
-        - name: 示例博客
-          url: examples/
-        - name: 特别感谢
-          url: contributors/
-    - name: 近期
-      icon: fa-solid fa-clock
-      url: /
-      rows:
-        - name: 热门文章
-          icon: fa-solid fa-fire
-        - name: ProHUD 开源库的设计思路
-          url: blog/2019-08-27-prohud/
-        - name: ValueX：实用的安全对象类型转换库
-          url: blog/2019-08-29-valuex/
-        - name: 心率管家 App 的设计与开发
-          url: blog/2019-07-23-heartmate/
     - name: 背景音乐
       icon: fa-solid fa-compact-disc
   search: Search...   # Search bar placeholder
